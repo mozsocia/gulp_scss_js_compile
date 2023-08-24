@@ -4,24 +4,39 @@
 // mozdalif sikder
 
 //== COLORS
+:root {
+    --body-bg: rgb(240, 241, 247);
+    --primary: rgb(132, 90, 223);
+    --secondary: rgb(35, 183, 229);
+    --warning: rgb(245, 184, 73);
+    --info: rgb(73, 182, 245);
+    --success: rgb(38, 191, 148);
+    --danger: rgb(230, 83, 60);
+    --light: rgb(243, 246, 248);
+    --dark: rgb(35, 35, 35);
+    --orange: rgb(255, 165, 5);
+    --pink: rgb(231, 145, 188);
+    --teal: rgb(18, 194, 194);
+    --purple: rgb(137, 32, 173);
+  }
 
+  
 $white:           #fff;
 $black:           #000;
 
 //$blue-dark:       #3498DB;
-$blue:            #a634db;
-$blue-light:      #eb32e1;
-$green:           #2ecc71;
-$red:             #e74c3c;
-$orange:          #F39C12;
-$silver:          #bdc3c7;
+$blue:            rgb(132, 90, 223);
+$blue-light:      rgb(73, 182, 245);
+$green:           rgb(38, 191, 148);
+$red:             rgb(230, 83, 60);
+$orange:          rgb(255, 165, 5);
+$silver:          rgb(227, 227, 230);
 $ebony:           #34495f;
-$purple:          #7E57C2;
-$teal:            #1abc9c;
+$purple:          rgb(137, 32, 173);
+$teal:            rgb(18, 194, 194);
 $grey:            #7f8c8d;
 $yellow:          #f1c40f;
-$pink:            #E91E63;
-
+$pink:            rgb(231, 145, 188);
 
 //== SEMANTIC COLORS
 
@@ -32,7 +47,8 @@ $brand-warning:             $orange;
 $brand-danger:              $red;
 $brand-default:             $silver;
 
-
+$default-border-radius: 3px;
+$sidebar-li-border-radius: 0.3rem;;
 // COLORS PALLETES
 //
 // The colors for which the palette will be created
@@ -55,8 +71,8 @@ $scotch-colors: (
 
 //== Body
 
-$body-bg:     #f1f1f1;
-$body-color:  #333;
+$body-bg:     rgb(240, 241, 247);
+$body-color:  #333335;
 
 
 //== Links

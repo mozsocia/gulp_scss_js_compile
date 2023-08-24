@@ -2,6 +2,7 @@
 .ibox {
     position: relative;
     margin-bottom: 25px;
+    border-radius: $default-border-radius;
     background-color: #fff;
     box-shadow: 0 1px 1px rgba(0,0,0,.1);
     .ibox-head {

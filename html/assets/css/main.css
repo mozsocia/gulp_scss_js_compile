@@ -2875,6 +2875,11 @@ a.text-danger:hover, a.text-danger:focus {
     .page-sidebar .admin-block .admin-info {
       padding-left: 1rem; }
 
+.sidebar-mini .page-sidebar ul li {
+  padding: 0 3px; }
+  .sidebar-mini .page-sidebar ul li a {
+    padding: 11px 12px; }
+
 .side-menu .heading {
   padding: 12px 15px;
   display: block;

@@ -9,7 +9,7 @@ const browsersync = require('browser-sync').create();
 
 
 function cleanDist() {
-  return del('dist'); // Delete the 'dist' folder
+  return del(['dist','html/assets/css/*.css']); // Delete the 'dist' folder
 }
 
 
@@ -34,7 +34,7 @@ function minifyCssTask() {
 
 function copyToHtmlCss() {
   return src(['dist/*.css'])
-    .pipe(dest('../html/dist/assets/css'));
+    .pipe(dest('html/assets/css'));
 }
 
 // JavaScript Task
@@ -48,7 +48,7 @@ function jsTask() {
 function browsersyncServe(cb) {
   browsersync.init({
     server: {
-      baseDir: '.'
+      baseDir: './html/'
     }
   });
   cb();
@@ -62,7 +62,15 @@ function browsersyncReload(cb) {
 // Watch Task
 function watchTask() {
   watch('*.html', browsersyncReload);
-  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, cleanDist,copyToHtmlCss, minifyCssTask, jsTask, browsersyncReload));
+  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(
+    cleanDist,
+    scssTask,
+    minifyCssTask,
+    copyToHtmlCss,
+    jsTask,
+    watchTask,
+    browsersyncReload
+    ));
 }
 
 // Default Gulp task

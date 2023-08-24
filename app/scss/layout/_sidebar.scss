@@ -13,10 +13,14 @@
 	    li {
 	        position: relative;
             display: block;
+			padding: 0 6px;
+			margin-top: 1px;
+			
             a {
 			    position: relative;
 			    display: block;
 			    padding: 11px 15px;
+				border-radius: $sidebar-li-border-radius;
 			}
 	    }
 	}
@@ -30,7 +34,13 @@
     	}
     }
 }
+.sidebar-mini .page-sidebar ul li {
+	padding: 0 3px;
 
+	a {
+		padding: 11px 12px;
+	}
+}
 .side-menu {
 	.heading {
 	    padding: 12px 15px;
