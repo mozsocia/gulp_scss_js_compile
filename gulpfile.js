@@ -4,7 +4,14 @@ const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const terser = require('gulp-terser');
 const rename = require('gulp-rename');
+var del = require('del');
 const browsersync = require('browser-sync').create();
+
+
+function cleanDist() {
+  return del('dist'); // Delete the 'dist' folder
+}
+
 
 // Sass Task
 function scssTask() {
@@ -27,7 +34,7 @@ function minifyCssTask() {
 
 function copyToHtmlCss() {
   return src(['dist/*.css'])
-    .pipe(dest('../../html/css/'));
+    .pipe(dest('../html/dist/assets/css'));
 }
 
 // JavaScript Task
@@ -55,13 +62,15 @@ function browsersyncReload(cb) {
 // Watch Task
 function watchTask() {
   watch('*.html', browsersyncReload);
-  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, minifyCssTask, jsTask, browsersyncReload));
+  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, cleanDist,copyToHtmlCss, minifyCssTask, jsTask, browsersyncReload));
 }
 
 // Default Gulp task
 exports.default = series(
+  cleanDist,
   scssTask,
   minifyCssTask,
+  copyToHtmlCss,
   jsTask,
   browsersyncServe,
   watchTask
