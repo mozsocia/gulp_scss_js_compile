@@ -8,7 +8,7 @@
 
 .content-wrapper {
     position: relative;
-    background-color: rgb( 240,241,247 );
+    background-color: $content-wraper-bg;
 	margin-left: 220px;
 	padding: 0 15px 60px 15px;
 	transition: margin .2s ease-in-out;
